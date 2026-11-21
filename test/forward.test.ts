@@ -241,8 +241,7 @@ function defOf(name: string): ToolDef {
 /* CLI helpers (also used by the omission suite). */
 
 const CLI_ROOT = fileURLToPath(new URL("..", import.meta.url));
-const CLI_PATH_ABS =
-  "/home/hatch/workspace/mcp-rebuild-100/builds/sitedossier/src/cli.ts";
+const CLI_PATH_ABS = fileURLToPath(new URL("../src/cli.ts", import.meta.url));
 
 function runCli(args: string[]) {
   return spawnSync(process.execPath, ["--import", "tsx", CLI_PATH_ABS, ...args], {
